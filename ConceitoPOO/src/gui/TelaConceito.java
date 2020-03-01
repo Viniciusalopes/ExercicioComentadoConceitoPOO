@@ -18,6 +18,7 @@ public class TelaConceito extends javax.swing.JFrame {
      */
     public TelaConceito() {
         initComponents();
+        this.setLocationRelativeTo(null); // Centraliza o jFrame na tela
     }
 
     /**
@@ -51,21 +52,9 @@ public class TelaConceito extends javax.swing.JFrame {
 
         jLabel2.setText("RAIO");
 
-        jTextFieldRaio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldRaioActionPerformed(evt);
-            }
-        });
-
         jLabel3.setText("AREA");
 
         jLabel4.setText("VOLUME");
-
-        jTextFieldArea.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAreaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,52 +100,31 @@ public class TelaConceito extends javax.swing.JFrame {
 
     private void jButtonExecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExecutarActionPerformed
 
-        // TODO add your handling code here:
-        
-        
-        
-         // Toda classe tem um construtor , a função do construtor é criar os objetos ex { = new Conceito(); ===> foi criado um objeto cone). 
-        // Instância da classe aciona o construtor e cria o objeto ,===> mandando mesnsagem <====   
-        
-        
+        /*
+            Toda classe tem um construtor , a função do construtor é criar os objetos ex { = new Conceito(); ===> foi criado um objeto cone). 
+            Instância da classe aciona o construtor e cria o objeto ,===> mandando mesnsagem <====   
+        */
        
         try { // monitora 
 
-           Conceito usuario = new Conceito(); // Classe Tela está com método privado em um pacote ===> onde precisa importar a classe ( Conceito ) para poder enxergar o outro pacote  ;
-
+            // Classe Tela está com método privado em um pacote ===> onde precisa importar a classe ( Conceito ) para poder enxergar o outro pacote;
+            Conceito usuario = new Conceito(); 
+            
            // Toda mensagem e composta de : nome do objeto  + metodo que deseja acionar  + lista de parametro desejados;
             usuario.setRaio(Float.parseFloat(jTextFieldRaio.getText()));
 
-            String saidaArea = "" + usuario.calcularArea();                   // get e set não existe vinculo;
-                                                                              //  set altera e guarda o atributo;
-            String saidaVolume = "" + usuario.calcularVolume();              //  getText() obtêm os dados que esta na tela e te dar o valor do atributo;
+            String saidaArea = "" + usuario.calcularArea();         // get e set não existe vinculo;
+                                                                    // set altera e guarda o atributo;
+            String saidaVolume = "" + usuario.calcularVolume();     // getText() obtêm os dados que esta na tela e te dar o valor do atributo;
 
-            jTextFieldArea.setText(saidaArea);                              // concatenação "" converte para String  
-            jTextFieldVolume.setText(saidaVolume);                          //usuario.getNome();   ===> obtem o  valor  
-                                                                            //setText atribui ===> mostra na tela
+            jTextFieldArea.setText(saidaArea);                      // concatenação "" converte para String  
+            jTextFieldVolume.setText(saidaVolume);                  // usuario.getNome();   ===> obtem o  valor  
+                                                                    // setText atribui ===> mostra na tela
             
         } catch (Exception erro) { // resolve o problema 
             JOptionPane.showMessageDialog(null, erro.getMessage());
         }
-
-        
-        
-        
-        
-        
-        
-        
-        
     }//GEN-LAST:event_jButtonExecutarActionPerformed
-
-    private void jTextFieldRaioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRaioActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldRaioActionPerformed
-
-    private void jTextFieldAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAreaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAreaActionPerformed
 
     /**
      * @param args the command line arguments
