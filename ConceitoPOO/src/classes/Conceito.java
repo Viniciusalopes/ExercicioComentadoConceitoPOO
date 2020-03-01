@@ -58,7 +58,7 @@ public class Conceito {
         set é onde faz a atribuição do valor do raio, por isso entra no set o tratamento de exeções  
     */
     public void setRaio(float raio) throws Exception{  //Todo throw esta ligado ao objeto Exception
-        if (raio < 0 )throw new Exception("Raio não pode ser negativo");
+        if (raio < 0 ) throw new Exception("Raio não pode ser negativo");
         //parametro raio 
         this.raio = raio;
     /*
@@ -68,15 +68,10 @@ public class Conceito {
     }
     
     public float calcularArea(){
-        
-       return  (float) (4*3.1415*(raio*raio));  // conjunto inteiro + conjunto double sempre vai ser double. Usa (float) para converter. 
-                                                
-        
+       return  (float) (4 * 3.1415 * ( raio * raio ));  // conjunto inteiro + conjunto double sempre vai ser double. Usa (float) para converter. 
     }
     
     public float calcularVolume(){
-        
-       return (float) ((4.0/3.0)*3.1415*(raio*raio*raio)); //ou Math.pow(raio, 3)
-        
+       return (float) (( 4.0 / 3.0 ) * 3.1415 * ( raio * raio * raio )); // ou Math.pow(raio, 3)
     }
 }
